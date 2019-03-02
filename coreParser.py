@@ -1,5 +1,5 @@
 
-file = open('raw_hss_catalog', 'r')
+file = open('raw_core.txt', 'r')
 lines = file.readlines()
 
 # Obtain list of all the course_names.
@@ -15,7 +15,7 @@ for line in lines:
 # strings 
 strings = []
 
-number = 0
+number = 162
 for line in lines: 
     number += 1
     # Course number.
@@ -34,6 +34,9 @@ for line in lines:
         idx = coursenumber.find(" ")
         coursenumber = coursenumber[: idx]
     if "c" in coursenumber: 
+        idx = coursenumber.find(" ")
+        coursenumber = coursenumber[: idx]
+    if "x" in coursenumber: 
         idx = coursenumber.find(" ")
         coursenumber = coursenumber[: idx]
     # Next part title
@@ -82,8 +85,6 @@ for line in lines:
         instructors = line[instructorsidx + 12: -2]
     if "Staff" in instructors or "staff" in instructors:
         instructors = ""
-    if instructors == "Hal": 
-        instructors = "Hall" 
     if " " in instructors: 
         idx = instructors.find(" ") 
         instructors = instructors[:idx]
@@ -93,7 +94,7 @@ for line in lines:
     strings.append(s)
     
 # Save to file 
-outfile = open("parsedData.txt","w") 
+outfile = open("parsedDataCore.txt","w") 
 outfile.write("internal ID, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors\n")
 for s in strings: 
     outfile.write(s)

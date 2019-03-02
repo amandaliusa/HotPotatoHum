@@ -1,0 +1,25 @@
+internal ID, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors
+163, Ma 1 abc, 1, Ma, False, False, True, 9 , , False, 
+164, Ph 1 abc, 1, Ph, False, False, True, 9 , Ph 8 bc|, False, 
+165, Ch 1 ab, 1, Ch, True, True, False, 6 , , False, 
+166, Ch 3 a, 3, Ch, False, False, True, 6 , , False, Mendez
+167, Ch 3 x, 3, Ch, False, False, True, 6 , , False, Mendez
+168, Bi 1, 1, Bi, False, False, True, 9 , , False, 
+169, Bi 1 x, 1, Bi, False, False, True, 9 , Bi 1|, False, Bois
+170, Ay 1, 1, Ay, False, False, True, 9 , , False, Djorgovsk
+171, ESE 1, 1, ESE, False, False, True, 9 , , False, Wennberg
+172, Ge 1, 1, Ge, False, False, True, 9 , , False, Asimow
+173, IST 4, 4, IST, False, False, True, 9 , , False, Bruck
+174, EE 1, 1, EE, False, False, True, 9 , , False, Vaidyanathan
+175, APh/EE 9 ab, 9, APh/EE, False, False, True, 6 , , False, Scherer
+176, APh 24, 24, APh, False, False, True, 6 , , False, Faraon
+177, Bi 10, 10, Bi, False, False, True, 6 , Bi 1|, False, 
+178, Ch 4 ab, 4, Ch, False, True, True, 9 , Ch 3 a|Ch 3 x|, False, Mendez
+179, Ch 8, 8, Ch, True, False, False, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
+180, Ch/ChE 9, 9, Ch/ChE, False, False, True, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
+181, EE/ME 7, 7, EE/ME, True, False, False, 6 , , False, George
+182, Ge 116, 116, Ge, False, True, False, 9 , Ge 1|, True, 
+183, Ph 3, 3, Ph, False, False, True, 6 , , False, 
+184, Ph 5, 5, Ph, True, False, False, 9 , , False, 
+185, Ph 8 bc, 8, Ph, False, False, True, 3 , , False, Spiropulu
+186, En/Wr 84, 84, En/Wr, False, False, True, 9 , , False, Hall
