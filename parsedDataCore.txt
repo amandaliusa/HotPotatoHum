@@ -1,25 +1,25 @@
-internal ID, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors
-163, Ma 1 abc, 1, Ma, False, False, True, 9 , , False, 
-164, Ph 1 abc, 1, Ph, False, False, True, 9 , Ph 8 bc|, False, 
-165, Ch 1 ab, 1, Ch, True, True, False, 6 , , False, 
-166, Ch 3 a, 3, Ch, False, False, True, 6 , , False, Mendez
-167, Ch 3 x, 3, Ch, False, False, True, 6 , , False, Mendez
-168, Bi 1, 1, Bi, False, False, True, 9 , , False, 
-169, Bi 1 x, 1, Bi, False, False, True, 9 , Bi 1|, False, Bois
-170, Ay 1, 1, Ay, False, False, True, 9 , , False, Djorgovsk
-171, ESE 1, 1, ESE, False, False, True, 9 , , False, Wennberg
-172, Ge 1, 1, Ge, False, False, True, 9 , , False, Asimow
-173, IST 4, 4, IST, False, False, True, 9 , , False, Bruck
-174, EE 1, 1, EE, False, False, True, 9 , , False, Vaidyanathan
-175, APh/EE 9 ab, 9, APh/EE, False, False, True, 6 , , False, Scherer
-176, APh 24, 24, APh, False, False, True, 6 , , False, Faraon
-177, Bi 10, 10, Bi, False, False, True, 6 , Bi 1|, False, 
-178, Ch 4 ab, 4, Ch, False, True, True, 9 , Ch 3 a|Ch 3 x|, False, Mendez
-179, Ch 8, 8, Ch, True, False, False, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
-180, Ch/ChE 9, 9, Ch/ChE, False, False, True, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
-181, EE/ME 7, 7, EE/ME, True, False, False, 6 , , False, George
-182, Ge 116, 116, Ge, False, True, False, 9 , Ge 1|, True, 
-183, Ph 3, 3, Ph, False, False, True, 6 , , False, 
-184, Ph 5, 5, Ph, True, False, False, 9 , , False, 
-185, Ph 8 bc, 8, Ph, False, False, True, 3 , , False, Spiropulu
-186, En/Wr 84, 84, En/Wr, False, False, True, 9 , , False, Hall
+internal ID, coursetitle, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors
+163, Calculus of One and Several Variables and Linear Algebra,Ma 1 abc, 1, Ma, False, False, True, 9 , , False, 
+164, Classical Mechanics and Electromagnetism,Ph 1 abc, 1, Ph, False, False, True, 9 , Ph 8 bc|, False, 
+165, General Chemistry,Ch 1 ab, 1, Ch, True, True, False, 6 , , False, 
+166, Fundamental Techniques of Experimental Chemistry,Ch 3 a, 3, Ch, False, False, True, 6 , , False, Mendez
+167, Experimental Methods in Solar Energy Conversion,Ch 3 x, 3, Ch, False, False, True, 6 , , False, Mendez
+168, Principles of Biology—The great theories of biology and their influence in the modern world,Bi 1, 1, Bi, False, False, True, 9 , , False, 
+169, The Great Ideas of Biology: Exploration through Experimentation,Bi 1 x, 1, Bi, False, False, True, 9 , Bi 1|, False, Bois
+170, The Evolving Universe,Ay 1, 1, Ay, False, False, True, 9 , , False, Djorgovsk
+171, Earth’s Climate,ESE 1, 1, ESE, False, False, True, 9 , , False, Wennberg
+172, Earth and Environment,Ge 1, 1, Ge, False, False, True, 9 , , False, Asimow.
+173, Information and Logic,IST 4, 4, IST, False, False, True, 9 , , False, Bruck
+174, The Science of Data, Signals, and Information,EE 1, 1, EE, False, False, True, 9 , , False, Vaidyanathan
+175, Solid-State Electronics for Integrated Circuits,APh/EE 9 ab, 9, APh/EE, False, False, True, 6 , , False, Scherer
+176, Introductory Modern Optics Laboratory,APh 24, 24, APh, False, False, True, 6 , , False, Faraon
+177, Introductory Biology Laboratory,Bi 10, 10, Bi, False, False, True, 6 , Bi 1|, False, 
+178, Synthesis and Analysis of Organic and Inorganic Compounds,Ch 4 ab, 4, Ch, False, True, True, 9 , Ch 3 a|Ch 3 x|, False, Mendez
+179, Experimental Procedures of Synthetic Chemistry for Premedical Students,Ch 8, 8, Ch, True, False, False, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
+180, Chemical Synthesis and Characterization for Chemical Engineering,Ch/ChE 9, 9, Ch/ChE, False, False, True, 9 , Ch 1 ab|Ch 3 a|Ch 3 x|, False, Mendez
+181, Introduction to Mechatronics,EE/ME 7, 7, EE/ME, True, False, False, 6 , , False, George
+182, Analytical Techniques Laboratory,Ge 116, 116, Ge, False, True, False, 9 , Ge 1|, True, 
+183, Introductory Physics Laboratory,Ph 3, 3, Ph, False, False, True, 6 , , False, 
+184, Analog Electronics for Physicists,Ph 5, 5, Ph, True, False, False, 9 , , False, 
+185, Experiments in Electromagnetism,Ph 8 bc, 8, Ph, False, False, True, 3 , , False, Spiropulu
+186, Writing About Science,En/Wr 84, 84, En/Wr, False, False, True, 9 , , False, Hall,

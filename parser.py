@@ -89,12 +89,12 @@ for line in lines:
         instructors = instructors[:idx]
         
     # Construct string. 
-    s = str(course_id) + ", " + str(coursename) + ", " + str(coursenumber) + ", " + str(coursedept) + ", " + str(fall) + ", " + str(winter) + ", " + str(spring) + ", "+ str(units) + ", " + str(prerequisites) + ", " + str(writingIntensive) + ", " + str(instructors) + "\n"
+    s = str(course_id) + ", " + str(coursetitle) + ", " + str(coursename) + ", " + str(coursenumber) + ", " + str(coursedept) + ", " + str(fall) + ", " + str(winter) + ", " + str(spring) + ", "+ str(units) + ", " + str(prerequisites) + ", " + str(writingIntensive) + ", " + str(instructors) + "\n"
     strings.append(s)
     
 # Save to file 
 outfile = open("parsedData.txt","w") 
-outfile.write("internal ID, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors\n")
+outfile.write("internal ID, coursetitle, coursename, coursenumber, coursedepartment(s), fall, winter, spring, units, prerequisites, writing intensive, instructors\n")
 for s in strings: 
     outfile.write(s)
 outfile.close()
