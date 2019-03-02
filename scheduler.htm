@@ -63,25 +63,71 @@
 
 <!-- Body section for display -->
 <body>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-<table id="myTable">
-<caption>Country Slice</caption>
-<tr><th>countryRef</th><th>year</th><th>population</th></tr>
-<tr><td>A</td><td>1960</td><td>9616353</td></tr>
-<tr><td>B</td><td>1961</td><td>9799379</td></tr>
-<tr><td>C</td><td>1962</td><td>9989846</td></tr>
-</table>
+<input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Search...">
+<input type="checkbox" name="coursetitle" value="coursetitle"> Course Title (e.g. Traditions of Japanese Art)<br>
+<input type="checkbox" name="coursenumber" value="coursenumber" checked> Course ID (e.g. Art 70)<br>
+<input type="submit" value="Search">
+<!-- Copy the table from coursetable2.html here when embedding code into website -->
+
 <script>
+function match(txtValue, filter) {
+    // counter matching characters/substrings
+    var i;
+    matchlevel = 0;
+    for (i = 0; i < txtValue.length - 3; i++) {
+        if (txtValue.includes(filter.substring(i, i + 3)) {
+            matchlevel++;
+        }
+    }
+    return matchlevel;
+}
+// search by course name (e.g. Art 70)
 function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
+  var input, filter, table, tr, coursename, i, txtValue, li;
+  var matches = {};
+  var matchlevels = [];
+  var finalmatches = [];
+
+  input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("myCourses");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
+    coursename = tr[i].getElementsByTagName("td")[2];
+    if (coursename) {
+      txtValue = coursename.textContent || coursename.innerText;
+      matchlevel = match(txtValue, filter);
+      if (matchlevel > txtValue.length / 2) {
+        //tr[i].style.display = "";
+        matches.matchlevel = coursename;
+        matchlevels.push(matchlevel);
+      }
+    }
+  }
+  matchlevels.sort(function(a, b){return b-a}); // sort in descending order
+  for (i = 0; i < matchlevels.length; i++) {
+      finalmatches.push(matches.matchlevel);
+  }
+  return finalmatches;
+}
+</script>
+
+<script>
+
+</script>
+
+<script>
+// search by course title (e.g. Traditions of Japanese Art)
+function myFunction() {
+  var input, filter, table, tr, coursetitle, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myCourses");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    coursetitle = tr[i].getElementsByTagName("td")[1];
+    if (coursetitle) {
+      txtValue = coursetitle.textContent || coursetitle.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
@@ -91,6 +137,7 @@ function myFunction() {
   }
 }
 </script>
+
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag1" src="https://www.nutritionadvance.com/wp-content/uploads/2016/12/edible-berries.jpg"
 draggable="true" ondragstart="drag(event)" width="100" height="100"></div>
 <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
