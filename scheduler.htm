@@ -64,9 +64,22 @@
 <!-- Body section for display -->
 <body>
 <input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Search...">
-<input type="checkbox" name="coursetitle" value="coursetitle"> Course Title (e.g. Traditions of Japanese Art)<br>
-<input type="checkbox" name="coursenumber" value="coursenumber" checked> Course ID (e.g. Art 70)<br>
-<input type="submit" value="Search">
+<!-- <input type="checkbox" name="coursetitle" value="coursetitle"> Course Title (e.g. Traditions of Japanese Art)<br>
+<input type="checkbox" name="coursenumber" value="coursenumber" checked> Course ID (e.g. Art 70)<br> -->
+<!-- <input type="submit" value="Search by Course Title (e.g. Traditions of Japanese Art)">
+<input type="submit" value="Search by Course ID (e.g. Art 70)"> -->
+<button id="titleSearch"> Search by Course Title (e.g. Traditions of Japanese Art)</button>
+    <h1 id="text"></h1>
+    <script>
+    document.getElementById("titleSearch").addEventListener("click", myFunction(){
+    //document.getElementById("text").innerText = "GeeksforGeeks";
+
+});
+    </script>
+</body> 
+
+</html>
+
 <!-- Copy the table from coursetable2.html here when embedding code into website -->
 
 <script>
@@ -75,15 +88,16 @@ function match(txtValue, filter) {
     var i;
     matchlevel = 0;
     for (i = 0; i < txtValue.length - 3; i++) {
-        if (txtValue.includes(filter.substring(i, i + 3)) {
+        if (txtValue.toUpperCase().includes(filter.substring(i, i + 3)) {
             matchlevel++;
         }
     }
+    alert(matchlevel);
     return matchlevel;
 }
 // search by course name (e.g. Art 70)
 function myFunction() {
-  var input, filter, table, tr, coursename, i, txtValue, li;
+  var input, filter, table, tr, coursename, i, txtValue, li, j, matchlevel;
   var matches = {};
   var matchlevels = [];
   var finalmatches = [];
@@ -96,20 +110,27 @@ function myFunction() {
     coursename = tr[i].getElementsByTagName("td")[2];
     if (coursename) {
       txtValue = coursename.textContent || coursename.innerText;
-      matchlevel = match(txtValue, filter);
-      if (matchlevel > txtValue.length / 2) {
-        //tr[i].style.display = "";
-        matches.matchlevel = coursename;
-        matchlevels.push(matchlevel);
+      matchlevel = 0;
+      for (j = 0; j < txtValue.length; j++) {
+          if (txtValue.toUpperCase().includes(filter.charAt(i)) {
+              matchlevel++;
+          }
       }
+      matchlevel = matchlevel / txtValue.length;
+      matches.matchlevel = i;
+      matchlevels.push(matchlevel);
     }
   }
   matchlevels.sort(function(a, b){return b-a}); // sort in descending order
   for (i = 0; i < matchlevels.length; i++) {
-      finalmatches.push(matches.matchlevel);
+      finalmatches[i] = matches.matchlevel;
   }
-  return finalmatches;
+  alert(finalmatches);
 }
+
+// function(displayMatches) {
+//     finalmatches = myFunction();
+// }
 </script>
 
 <script>
@@ -123,15 +144,19 @@ function myFunction() {
   input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myCourses");
+ // table.style.visibility=True;
   tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    tr[i].style.display = "none";
+  }
   for (i = 0; i < tr.length; i++) {
     coursetitle = tr[i].getElementsByTagName("td")[1];
     if (coursetitle) {
       txtValue = coursetitle.textContent || coursetitle.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
+        // tr[i].style.display = "";
       } else {
-        tr[i].style.display = "none";
+        // tr[i].style.display = "none";
       }
     }
   }
