@@ -62,7 +62,7 @@
 <tr><td>59</td><td> Humanistic Ecology</td><td> H 132</td><td> 132</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> Lewis</td></tr>
 <tr><td>60</td><td> War, Conquest, and Empires</td><td> H 135</td><td> 135</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> Hoffman</td></tr>
 <tr><td>61</td><td> Criminals, Outlaws, and Justice in a Thousand Years of Chinese History</td><td> H 137</td><td> 137</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
-<tr><td>62</td><td> From Sage Kings to the CCP: A Primer on Ruler</td><td> State and Empire in the History of Chinese Government</td><td> H 138</td><td> 138</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
+<tr><td>62</td><td> From Sage Kings to the CCP: A Primer on Ruler, State and Empire in the History of Chinese Government</td><td> H 138</td><td> 138</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
 <tr><td>63</td><td> America in the 1960s</td><td> H 150</td><td> 150</td><td> H</td><td> True</td><td> False</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
 <tr><td>64</td><td> The Long(er) Civil Rights Movement: From Emancipation to Black Lives Matter</td><td> H 151</td><td> 151</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
 <tr><td>65</td><td> Selected Topics in History</td><td> H 161</td><td> 161</td><td> H</td><td> False</td><td> False</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
@@ -267,7 +267,6 @@ document.getElementById("titleSearch").addEventListener("click", reSortTitle);
 function reSortNum() {
   var finalmatches = [];
   finalmatches = numSearch();
-  alert(finalmatches.toString());
   var ul = document.querySelector("ul");
   ul.innerHTML = "";
   table = document.getElementById("myCourses");
@@ -290,7 +289,6 @@ function reSortNum() {
 function reSortTitle() {
   var finalmatches = [];
   finalmatches = titleSearch();
-  alert(finalmatches.toString());
   var ul = document.querySelector("ul");
   ul.innerHTML = "";
   table = document.getElementById("myCourses");
@@ -330,6 +328,9 @@ function numSearch() {
       for (j = 0; j < filter.length; j++) {
           if (txtValue.toUpperCase().includes(filter.charAt(j))) {
               matchlevel = matchlevel + 1;
+          if (txtValue.toUpperCase().includes(filter)) {
+              matchlevel = matchlevel + 10;
+          }
           }
       }
       matchlevel = 1/i + matchlevel;
@@ -364,6 +365,9 @@ function titleSearch() {
       for (j = 0; j < filter.length; j++) {
           if (txtValue.toUpperCase().includes(filter.charAt(j))) {
               matchlevel = matchlevel + 1;
+          }
+          if (txtValue.toUpperCase().includes(filter)) {
+              matchlevel = matchlevel + 10;
           }
       }
       matchlevel = 1/i + matchlevel;

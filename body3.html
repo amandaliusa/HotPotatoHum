@@ -329,6 +329,9 @@ function numSearch() {
           if (txtValue.toUpperCase().includes(filter.charAt(j))) {
               matchlevel = matchlevel + 1;
           }
+          if (txtValue.toUpperCase().includes(filter)) {
+              matchlevel = matchlevel + 10;
+          }
       }
       matchlevel = 1/i + matchlevel;
       matchlevels[i-1] = matchlevel;
@@ -362,6 +365,9 @@ function titleSearch() {
       for (j = 0; j < filter.length; j++) {
           if (txtValue.toUpperCase().includes(filter.charAt(j))) {
               matchlevel = matchlevel + 1;
+          }
+          if (txtValue.toUpperCase().includes(filter)) {
+              matchlevel = matchlevel + 10;
           }
       }
       matchlevel = 1/i + matchlevel;
