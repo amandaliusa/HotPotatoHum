@@ -1,3 +1,6 @@
+<body>
+
+<!-- Copy the table from coursetable2.html here when embedding code into website -->
 <table id="myCourses" style="display: none;">
 <caption>Courses</caption>
 <tr><th>internal ID</th><th> coursetitle</th><th> coursename</th><th> coursenumber</th><th> coursedepartment(s)</th><th> fall</th><th> winter</th><th> spring</th><th> units</th><th> prerequisites</th><th> writing intensive</th><th> instructors</th></tr>
@@ -188,3 +191,86 @@
 <tr><td>185</td><td> Experiments in Electromagnetism</td><td>Ph 8 bc</td><td> 8</td><td> Ph</td><td> False</td><td> False</td><td> True</td><td> 3 </td><td> </td><td> False</td><td> Spiropulu</td></tr>
 <tr><td>186</td><td> Writing About Science</td><td>En/Wr 84</td><td> 84</td><td> En/Wr</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> False</td><td> Hall</td></tr>
 </table>
+
+
+<input type="text" id="searchInput" placeholder="Search...">
+
+<button id="numSearch"> Search by Course Number (e.g. Art 70)</button>
+<button id="titleSearch"> Search by Course Title (e.g. Traditions of Japanese Art)</button>
+
+<script>
+document.getElementById("numSearch").addEventListener("click", numSearch);
+document.getElementById("titleSearch").addEventListener("click", titleSearch);
+
+
+// search by course name (e.g. Art 70)
+function numSearch() {
+  alert("Just a test");
+  var input, filter, table, tr, coursename, i, txtValue, li, j, matchlevel;
+  var matches = {"": ""};
+  var matchlevels = [];
+  var sortlevels = [];
+  var finalmatches = [];
+
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myCourses");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    coursename = tr[i].getElementsByTagName("td")[2];
+    if (coursename) {
+      txtValue = coursename.textContent || coursename.innerText;
+      matchlevel = 0;
+      for (j = 0; j < filter.length; j++) {
+          if (txtValue.toUpperCase().includes(filter.charAt(j))) {
+              matchlevel = matchlevel + 1;
+          }
+      }
+      matchlevel = 1/i + matchlevel;
+      matchlevels[i-1] = matchlevel;
+      sortlevels[i-1] = matchlevel;
+    }
+  }
+  sortlevels.sort(function(a, b){return b-a}); // sort in descending order
+  for (i = 0; i < sortlevels.length; i++) {
+      finalmatches[i] = matchlevels.indexOf(sortlevels[i]);
+  }
+  alert(finalmatches);
+}
+
+// search by course name (e.g. Art 70)
+function titleSearch() {
+  alert("Just a test");
+  var input, filter, table, tr, coursename, i, txtValue, li, j, matchlevel;
+  var matches = {"": ""};
+  var matchlevels = [];
+  var sortlevels = [];
+  var finalmatches = [];
+
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myCourses");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    coursename = tr[i].getElementsByTagName("td")[1];
+    if (coursename) {
+      txtValue = coursename.textContent || coursename.innerText;
+      matchlevel = 0;
+      for (j = 0; j < filter.length; j++) {
+          if (txtValue.toUpperCase().includes(filter.charAt(j))) {
+              matchlevel = matchlevel + 1;
+          }
+      }
+      matchlevel = 1/i + matchlevel;
+      matchlevels[i-1] = matchlevel;
+      sortlevels[i-1] = matchlevel;
+    }
+  }
+  sortlevels.sort(function(a, b){return b-a}); // sort in descending order
+  for (i = 0; i < sortlevels.length; i++) {
+      finalmatches[i] = matchlevels.indexOf(sortlevels[i]);
+  }
+  alert(finalmatches);
+}
+</script>
+</body>
