@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #sortable0 {
+    border: 1px solid #eee;
+    width: 200px;
+    max-height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 10px 0 0 0;
+    list-style-type: none;
+    min-height: 800px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12 {
+    border: 1px solid #eee;
+    width: 200px;
+    min-height: 200px;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 5em;
+    width: 180px;
+  }
+
+  #CourseDescription{
+    background-color: lightgrey;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    bottom: 10px;
+    left:50%;
+    margin-left:-250px;
+}
+  }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  $(".sortable").sortable({
+    axis: "y",
+    cursor: 'move',
+    containment: "parent",
+    cursor: 'pointer',
+    items: "li"
+  });
+
+  $( function() {
+    $( "#sortable0, #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12" ).sortable({
+      scroll: true,
+      scrollSensitivity: 80,
+      scrollSpeed: 3,
+      connectWith: ".connectedSortable",
+        receive: function(event, ui) {
+            if ($(this).children().length > 6 && event.target.attributes.id.value !== "sortable0") {
+                $(ui.sender).sortable('cancel');
+                alert("Maximum of 6 courses allowed");
+            }
+        }
+    }).disableSelection();
+
+    $("#sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li").on('click',function(){
+            cursor: 'pointer',
+            $("#CourseDescription").html($(this).html());
+            });
+  });
+  </script>
+</head>
+<body>
+  <!-- Special ranking list of all classes -->
+  <ul id="sortable0" class="connectedSortable">
+    <li class="ui-state-default">0 Item 1</li>
+    <li class="ui-state-default">0 Item 2</li>
+    <li class="ui-state-default">0 Item 3</li>
+    <li class="ui-state-default">0 Item 4</li>
+    <li class="ui-state-default">Item 5</li>
+    <li class="ui-state-default">Item 6</li>
+    <li class="ui-state-default">Item 7</li>
+    <li class="ui-state-default">Item 8</li>
+    <li class="ui-state-default">Item 9</li>
+    <li class="ui-state-default">Item 10</li>
+    <li class="ui-state-default">Item 11</li>
+    <li class="ui-state-default">Item 12</li>
+    <li class="ui-state-default">Item 13</li>
+    <li class="ui-state-default">Item 14</li>
+    <li class="ui-state-default">Item 15</li>
+    <li class="ui-state-default">Item 16</li>
+    <li class="ui-state-default">Item 17</li>
+    <li class="ui-state-default">Item 18</li>
+    <li class="ui-state-default">Item 19</li>
+    <li class="ui-state-default">Item 20</li>
+  </ul>
+
+  <ul id="sortable1" class="connectedSortable">
+    <li id="135" class="ui-state-default">1 Item 1</li>
+    <li id="136" class="ui-state-default">1 Item 2</li>
+  </ul>
+
+  <ul id="sortable2" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <ul id="sortable3" class="connectedSortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+  </ul>
+
+  <ul id="sortable4" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <ul id="sortable5" class="connectedSortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+  </ul>
+
+  <ul id="sortable6" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <ul id="sortable7" class="connectedSortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+  </ul>
+
+  <ul id="sortable8" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <ul id="sortable9" class="connectedSortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+  </ul>
+
+  <ul id="sortable10" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <ul id="sortable11" class="connectedSortable">
+    <li class="ui-state-default">Item 1</li>
+    <li class="ui-state-default">Item 2</li>
+  </ul>
+
+  <ul id="sortable12" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="ui-state-highlight">Item 2</li>
+  </ul>
+
+  <div id="CourseDescription"></div>
+
+</body>
+</html>

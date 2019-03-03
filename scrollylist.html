@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;h1&gt;List of Courses&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;ul&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/ul&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener("touchstart", function(){}, true)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var courseIds = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15",<span class="Apple-converted-space"> </span></p>
+<p class="p1">"16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186"];</p>
+<p class="p2"><span class="Apple-converted-space"> </span></p>
+<p class="p1">var ul = document.querySelector("ul");</p>
+<p class="p2"><br></p>
+<p class="p1">for (var i = 0; i &lt; courseIds.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var course = courseIds[i];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var listItem = document.createElement("li");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>listItem.textContent = course;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>j = i + 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>listItem.id = j.toString();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>ul.appendChild(listItem);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">var ul_list = document.getElementsByTagName("ul");</p>
+<p class="p2"><br></p>
+<p class="p1">for(var i = 0;i&lt;ul_list.length;i++){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ul_list[i].addEventListener("click", myScript);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function myScript(e){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert(e.target.attributes.id.value);<span class="Apple-converted-space">       </span></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Dynamically Populate List Items&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>ul {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: scroll;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">     </span>-webkit-overflow-scrolling: touch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color:blue;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>float: left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clear: both;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>list-style-type: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+</body>
+</html>

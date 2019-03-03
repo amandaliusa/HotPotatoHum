@@ -147,16 +147,29 @@ function myFunction() {
  // table.style.visibility=True;
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
+<<<<<<< HEAD
     tr[i].style.display = "none";
   }
   for (i = 0; i < tr.length; i++) {
     coursetitle = tr[i].getElementsByTagName("td")[1];
     if (coursetitle) {
       txtValue = coursetitle.textContent || coursetitle.innerText;
+=======
+    td = tr[i].getElementsByTagName("td")[0];
+    td1 = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      txtValue1 = td1.textContent || td1.innerText;
+>>>>>>> c00af13cbdee3a6077aee0213495404ac00f5a40
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         // tr[i].style.display = "";
       } else {
         // tr[i].style.display = "none";
+      }
+      if (txtValue1.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
       }
     }
   }
