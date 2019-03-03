@@ -1,0 +1,64 @@
+
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #sortable0 {
+    border: 1px solid #eee;
+    width: 230px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 10px 0 0 0;
+    list-style-type: none;
+    min-height: 600px;
+    max-height: 600px;
+    float: left;
+  }
+
+  #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12 {
+    border: 1px solid #eee;
+    width: 230px;
+    min-height: 150px;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0 0 0;
+    float: left;
+    background-color: #DCDCDC
+  }
+  #sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 210px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  $(".sortable").sortable({
+    axis: "y",
+    containment: "parent",
+    cursor: "move",
+    items: "li",
+    tolerance: "pointer",
+  });
+
+  $( function() {
+    $( "#sortable0, #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12" ).sortable({
+      scroll: true,
+      scrollSensitivity: 80,
+      scrollSpeed: 3,
+      connectWith: ".connectedSortable",
+        receive: function(event, ui) {
+            if ($(this).children().length > 6 && event.target.attributes.id.value !== "sortable0") {
+                $(ui.sender).sortable('cancel');
+                alert("Maximum of 6 courses allowed");
+            }
+        }
+    }).disableSelection();
+  } );
+  </script>
