@@ -1,4 +1,3 @@
-
 <table id="myCourses" style="display: none;">
 <caption>Courses</caption>
 <tr><td>internal ID</td><td> coursetitle</td><td> coursename</td><td> coursenumber</td><td> coursedepartment(s)</td><td> fall</td><td> winter</td><td> spring</td><td> units</td><td> prerequisites</td><td> writing intensive</td><td> instructors</td></tr>
@@ -216,14 +215,35 @@
     margin: 0;
     padding: 10px 0 0 0;
     float: left;
-    background-color: #003366 
+    background-color: #003366;
   }
   #sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li {
     margin: 0 5px 5px 5px;
     padding: 5px;
     font-size: 1.2em;
     width: 210px;
-    background-color: #D4EDF2
+    background-color: #D4EDF2;
+  }
+
+  #CourseDescription{
+    background-color: #D4EDF2;
+    width: 860px;
+    height: 300px;
+    padding: 40px 30px 10px 30px;
+    margin: 7px;
+    position: absolute;
+    bottom: 70px;
+  }
+
+  #Warning{
+    background-color: lightblue;
+    width: 860px;
+    height: 50px;
+    padding: 10px 30px 10px 30px;
+    margin: 7px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 1.2em;
   }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -246,32 +266,46 @@
       connectWith: ".connectedSortable",
         receive: function(event, ui) {
             newChild = $(this).children()[$(this).children().length - 1];
-            newChildId = newChild.id -1; 
-            table = document.getElementById("myCourses"); 
+            newChildId = newChild.id -1;
+            table = document.getElementById("myCourses");
             rows = document.getElementsByTagName("tr");
-            fall = rows[newChildId].getElementsByTagName("td")[5].innerText; 
-            winter = rows[newChildId].getElementsByTagName("td")[6].innerText; 
-            spring = rows[newChildId].getElementsByTagName("td")[7].innerText; 
+            fall = rows[newChildId].getElementsByTagName("td")[5].innerText;
+            winter = rows[newChildId].getElementsByTagName("td")[6].innerText;
+            spring = rows[newChildId].getElementsByTagName("td")[7].innerText;
 
             if ((event.target.attributes.id.value === "sortable1" || event.target.attributes.id.value === "sortable4" || event.target.attributes.id.value === "sortable7" || event.target.attributes.id.value === "sortable10") && fall === " False"){
+                $("#Warning").html("Course not offered this term");
                 $(ui.sender).sortable('cancel');
-                alert("Course not offered this term");
+                myVar = setTimeout(clear, 500);
             }
             if ((event.target.attributes.id.value === "sortable2" || event.target.attributes.id.value === "sortable5" || event.target.attributes.id.value === "sortable8" || event.target.attributes.id.value === "sortable10") && winter === " False"){
-                $(ui.sender).sortable('cancel');
-                alert("Course not offered this term");
+              $("#Warning").html("Course not offered this term");
+              $(ui.sender).sortable('cancel');
+              myVar = setTimeout(clear, 500);
             }
-            
+
             if ((event.target.attributes.id.value === "sortable3" || event.target.attributes.id.value === "sortable6" || event.target.attributes.id.value === "sortable9" || event.target.attributes.id.value === "sortable12") && spring === " False"){
-                $(ui.sender).sortable('cancel');
-                alert("Course not offered this term");
+              $("#Warning").html("Course not offered this term");
+              $(ui.sender).sortable('cancel');
+              myVar = setTimeout(clear, 500);
             }
 
             if ($(this).children().length > 6 && event.target.attributes.id.value !== "sortable0") {
-                $(ui.sender).sortable('cancel');
-                alert("Maximum of 6 courses allowed");
+              $("#Warning").html("Course not offered this term");
+              $(ui.sender).sortable('cancel');
+              myVar = setTimeout(clear, 500);
             }
         }
     }).disableSelection();
+
+    function clear() {
+      $("#Warning").html("");
+    }
+
+    $("#sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li").on('click',function(){
+      var l = document.getElementById("descriptions");
+      var elem = l.getElementsByTagName("li");
+      $("#CourseDescription").html(elem[event.target.attributes.id.value - 2].innerHTML);
+            });
   } );
   </script>
