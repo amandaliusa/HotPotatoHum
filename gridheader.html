@@ -1,5 +1,3 @@
-
-
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -34,6 +32,18 @@
     font-size: 1.2em;
     width: 210px;
   }
+
+  #CourseDescription{
+    background-color: lightblue;
+    width: 700px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    bottom: 10px;
+    left:50%;
+    margin-left:-250px;
+  }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -60,5 +70,11 @@
             }
         }
     }).disableSelection();
+
+    $("#sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li").on('click',function(){
+      var l = document.getElementById("descriptions");
+      var elem = l.getElementsByTagName("li");
+      $("#CourseDescription").html(elem[event.target.attributes.id.value - 2].innerHTML);
+            });
   } );
   </script>
