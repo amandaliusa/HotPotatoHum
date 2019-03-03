@@ -63,7 +63,7 @@
 <tr><td>59</td><td> Humanistic Ecology</td><td> H 132</td><td> 132</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> Lewis</td></tr>
 <tr><td>60</td><td> War, Conquest, and Empires</td><td> H 135</td><td> 135</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> Hoffman</td></tr>
 <tr><td>61</td><td> Criminals, Outlaws, and Justice in a Thousand Years of Chinese History</td><td> H 137</td><td> 137</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
-<tr><td>62</td><td> From Sage Kings to the CCP: A Primer on Ruler</td><td> State and Empire in the History of Chinese Government</td><td> H 138</td><td> 138</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
+<tr><td>62</td><td> From Sage Kings to the CCP: A Primer on Ruler, State and Empire in the History of Chinese Government</td><td> H 138</td><td> 138</td><td> H</td><td> False</td><td> True</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> Dykstra</td></tr>
 <tr><td>63</td><td> America in the 1960s</td><td> H 150</td><td> 150</td><td> H</td><td> True</td><td> False</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
 <tr><td>64</td><td> The Long(er) Civil Rights Movement: From Emancipation to Black Lives Matter</td><td> H 151</td><td> 151</td><td> H</td><td> False</td><td> False</td><td> True</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
 <tr><td>65</td><td> Selected Topics in History</td><td> H 161</td><td> 161</td><td> H</td><td> False</td><td> False</td><td> False</td><td> 9 </td><td> </td><td> True</td><td> </td></tr>
@@ -292,7 +292,7 @@
               $(ui.sender).sortable('cancel');
               myVar = setTimeout(clear, 500);
             }
-            if ((event.target.attributes.id.value === "sortable2" || event.target.attributes.id.value === "sortable5" || event.target.attributes.id.value === "sortable8" || event.target.attributes.id.value === "sortable10") && winter === " False"){
+            if ((event.target.attributes.id.value === "sortable2" || event.target.attributes.id.value === "sortable5" || event.target.attributes.id.value === "sortable8" || event.target.attributes.id.value === "sortable11") && winter === " False"){
               $("#Warning").html("Course not offered this term");
               $(ui.sender).sortable('cancel');
               myVar = setTimeout(clear, 500);
@@ -316,7 +316,7 @@
       $("#Warning").html("");
     }
 
-    $("#sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li, #sortable6 li, #sortable7 li, #sortable8 li, #sortable9 li, #sortable10 li, #sortable11 li, #sortable12 li").on('click',function(){
+    $("#sortable0, #sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7, #sortable8, #sortable9, #sortable10, #sortable11, #sortable12").on('click',function(){
       var l = document.getElementById("descriptions");
       var elem = l.getElementsByTagName("li");
       $("#CourseDescription").html(elem[event.target.attributes.id.value - 2].innerHTML);
